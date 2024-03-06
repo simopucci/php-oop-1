@@ -46,7 +46,27 @@ var_dump($titanic); -->
                 <b>Descrizione:</b>
                 <?= $production->genre->description ?>
             </li>
+            <?php if ($production instanceof Movie): ?>
+                <li>
+                    <b>Profitti:</b>
+                    <?= $production->profits ?>
+                </li>
+                <li>
+                    <b>Durata:</b>
+                    <?= $production->duration ?>
+                </li>
+            <?php elseif ($production instanceof TvSerie): ?>
+                <li>
+                    <b>Stagioni:</b>
+                    <?= $production->seasons ?>
+                </li>
+                <li>
+                    <b>Episodi/Stagione:</b>
+                    <?= $production->episodes ?>
+                </li>
+            <?php endif; ?>
         </ul>
+        <hr>
     <?php endforeach; ?>
 </body>
 </html>
