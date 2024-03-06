@@ -38,6 +38,14 @@ var_dump($titanic); -->
                 <b>Voto:</b>
                 <?= $production->vote ?>
             </li>
+            <li>
+                <b>Genere:</b>
+                <?= $production->genre->name ?>
+            </li>
+            <li>
+                <b>Descrizione:</b>
+                <?= $production->genre->description ?>
+            </li>
         </ul>
     <?php endforeach; ?>
 </body>
